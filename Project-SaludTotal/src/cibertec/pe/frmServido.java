@@ -62,18 +62,37 @@ public class frmServido extends JFrame{
     }
 
     void porcesarAfiliados(List<Afiliado> afiliados){
+        double sumatotal = 0;
+        int cantidadMorosos = 0;
         for(Afiliado c : afiliados){
             String estado;
 
-            if (c.isCondicion()) estado = "Puntual";
-            else estado = "Moroso";
 
+            if (c.isCondicion() == 1){
+                estado = "Puntual";
+
+            }else {
+                estado = "Moroso";
+                cantidadMorosos ++;
+            }
+            sumatotal = sumatotal + c.getMonto();
 
             txtResultado.append("Codigo: "      +   c.getCodigo()   + "\n");
             txtResultado.append("Monto: "       +   c.getMonto()    + "\n");
             txtResultado.append("Condicion: "   +   estado          + "\n\n\n");
 
         }
+
+        double promedioMonto = 0;
+        if (!afiliados.isEmpty()) {
+        promedioMonto = sumatotal / afiliados.size();
+        }
+
+        txtResultado.append("------------------------------------------------" + "\n");
+        txtResultado.append("La suma total del prestamo: " + sumatotal + "\n");
+        txtResultado.append("Cantidad total de Morosos: " + cantidadMorosos + "\n");
+        txtResultado.append("Promedio del Montototal: " + promedioMonto + "\n");
+        txtResultado.append("------------------------------------------------");
     }
 
     public static void main(String[] args) {

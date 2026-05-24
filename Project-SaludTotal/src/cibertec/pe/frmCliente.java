@@ -29,10 +29,10 @@ public class frmCliente extends JFrame{
     }
 
     public void enviarAfiliados(){
-        Afiliado afiliado1 = new Afiliado(123, 1500.5, true);
-        Afiliado afiliado2 = new Afiliado(578, 2000.5, false);
-        Afiliado afiliado3 = new Afiliado(662, 1000.5, false);
-        Afiliado afiliado4 = new Afiliado(475, 3500.5, false);
+        Afiliado afiliado1 = new Afiliado(123, 1500.5, 1, "Ismael", "Iparraguirre", "is@gmail.com");
+        Afiliado afiliado2 = new Afiliado(578, 2000.5, 0, "Monica", "Ledesma", "MoQgmail.com");
+        Afiliado afiliado3 = new Afiliado(662, 1000.5, 0, "Rolando", "Iparraguirre", "Ro@gmail.com");
+        Afiliado afiliado4 = new Afiliado(475, 3500.5, 0, "Marco", "Polo", "Rokko@gmail.com");
 
         List<Afiliado> afiliados = new ArrayList<>();
 
